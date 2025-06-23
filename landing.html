@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F8_tech</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>F8_tech</h1>
+        <p>Digital Solutions & Executive Support</p>
+        <nav>
+            <a href="services.html">Services</a>
+            <a href="portfolio.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+       <h2>Need a Website, Virtual Assistant, or App? </h2>
+       <p>F8_tech is a Brand you can trust, I help businesses build beautiful websites and offer top-notch virtual assistance services.</p>
+       <button onclick="scrollToContact()">Work With Me</button>
+    </section>
+
+    <section id="services">
+        <h2 style="text-align: center;">My Services</h2>
+        <div class="services">
+            <div class="card">
+                <h3>Virtual Assistant</h3>
+                <p>Professional support services to help you stay Focused, Organised and Effective. </p>
+            </div>
+            <div class="card">
+                <h3>Digital Branding</h3>
+                <p>Grow your digital presence and Brand Identity with Uniquie websites </p>
+            
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <h2 style="text-align: center;">Portfolio</h2>
+        <div class="portfolio">
+            <div class="portfolio">
+                <div class="card">Landing Page for Skincare Brand</div>
+                <div class="card">E-commerce Sore Setup</div>
+                <div class="card">Portfolio Website for Freelancer</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 style="text-align: center;">Get in Touch</h2>
+        <form class="contact-form" onsubmit="submitForm(event)">
+            <input type="text" placeholder="Name" required />
+            <input type="email" placeholder="Email" required />
+            <textarea rows="4" placeholder="Message" required ></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        &copy;2025 F8_tech. Digital Solutions & Executive Support .
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
