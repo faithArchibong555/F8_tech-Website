@@ -149,6 +149,10 @@ nav {
     color: var(--secondary);
 }
 
+.hero-content p {
+    margin-bottom: 1rem;
+}
+
 .hero-img img {
     width: 400px;
     border-radius: 20px;
