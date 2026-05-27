@@ -23,7 +23,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Georgia', 'TimesNewRoman', 'Playfair Display', serif;
     transition: background 0.3s ease, color 0.3s ease;
 }
 
