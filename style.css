@@ -38,6 +38,88 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* ROLE CARDS */
+.roles-section {
+  padding: 0 3rem 5rem;
+}
+
+.roles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.role-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border: 3px solid var(--primary);
+  border-radius: 16px;
+  padding: 2rem;
+  text-decoration: none;
+  overflow: hidden;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.role-card::before {
+  content: '';
+  position: absolute;
+  inset-x: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(200, 245, 66, 0.2), transparent);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.role-card:hover { background: #121212; border-color: #2a2a2a; }
+.role-card:hover::before { opacity: 1; }
+
+
+.role-title {
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--secondary);
+  margin: 0 0 0.75rem;
+  line-height: 1.2;
+}
+
+.role-divider {
+  height: 1px;
+  width: 24px;
+  background: #1f1f1f;
+  margin-bottom: 1rem;
+  transition: width 0.3s;
+}
+
+.role-card:hover .role-divider { width: 40px; }
+
+.role-desc {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.7;
+  flex: 1;
+  margin: 0 0 2rem;
+}
+
+.role-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #444;
+  transition: color 0.3s, gap 0.3s;
+}
+
+.role-card:hover .role-cta { color: #c8f542; gap: 10px; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .roles-section { padding: 0 1.5rem 3rem; }
+  .roles-grid { grid-template-columns: 1fr; }
+}
+
 .section-title, .project-card, .about-content, .contact-form {
     animation: fadeIn 1s ease forwards;
 }
