@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faith Archibong — Social Media Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #EFEAE1;
+    --bg-panel: #F8F5EF;
+    --ink: #1C2B39;
+    --ink-soft: #4B5B67;
+    --accent: #C81E5B;
+    --accent-soft: #F3D9E2;
+    --line: #D8D0C2;
+    --chip-bg: #1C2B39;
+    --chip-ink: #F8F5EF;
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --bg: #171310;
+      --bg-panel: #201B17;
+      --ink: #F1ECE3;
+      --ink-soft: #B9AD9C;
+      --accent: #FF5C8A;
+      --accent-soft: #3A222B;
+      --line: #382F27;
+      --chip-bg: #F1ECE3;
+      --chip-ink: #171310;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg: #171310;
+    --bg-panel: #201B17;
+    --ink: #F1ECE3;
+    --ink-soft: #B9AD9C;
+    --accent: #FF5C8A;
+    --accent-soft: #3A222B;
+    --line: #382F27;
+    --chip-bg: #F1ECE3;
+    --chip-ink: #171310;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, .display {
+    font-family: 'Space Grotesk', 'Inter', Arial, sans-serif;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  a { color: inherit; }
+  .wrap{
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* HERO */
+  .hero{
+    padding: 76px 0 56px;
+    border-bottom: 1px solid var(--line);
+  }
+  .eyebrow{
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 14px;
+  }
+  .hero h1{
+    font-size: clamp(40px, 7vw, 64px);
+    font-weight: 700;
+    line-height: 1.02;
+  }
+  .hero .role{
+    font-size: clamp(18px, 3vw, 22px);
+    color: var(--ink-soft);
+    margin-top: 14px;
+    max-width: 60ch;
+  }
+  .hero-links{
+    margin-top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .hero-links a{
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 9px 16px;
+    border: 1px solid var(--ink);
+    border-radius: 999px;
+    transition: background .15s ease, color .15s ease;
+  }
+  .hero-links a.primary{
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .hero-links a:hover{
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+
+  /* STAT STRIP */
+  .stats{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .stat{
+    padding: 28px 20px;
+    border-right: 1px solid var(--line);
+  }
+  .stat:last-child{ border-right: none; }
+  .stat .num{
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(24px, 4vw, 34px);
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .stat .label{
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 4px;
+  }
+
+  /* SECTION */
+  section{ padding: 56px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type{ border-bottom: none; }
+  .section-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 30px;
+    gap: 20px;
+  }
+  .section-head h2{
+    font-size: clamp(24px, 3.5vw, 30px);
+    font-weight: 600;
+  }
+  .section-head .note{
+    font-size: 14px;
+    color: var(--ink-soft);
+    text-align: right;
+  }
+
+  /* WORK CARDS */
+  .work-list{ display: flex; flex-direction: column; gap: 0; }
+  .work-item{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    gap: 20px;
+    padding: 22px 0;
+    border-top: 1px solid var(--line);
+  }
+  .work-item:first-child{ border-top: none; }
+  .work-item h3{
+    font-size: 19px;
+    font-weight: 600;
+  }
+  .work-item .meta{
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-top: 4px;
+  }
+  .work-item .result{
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 5px 12px;
+    border-radius: 999px;
+  }
+  .work-item .visit{
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1.5px solid var(--ink);
+    padding-bottom: 2px;
+  }
+  .work-item .visit:hover{ border-color: var(--accent); color: var(--accent); }
+
+  .confidential-note{
+    margin-top: 26px;
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    border-left: 2px solid var(--accent);
+    padding-left: 16px;
+  }
+
+  /* SKILLS */
+  .chip-group{ display: flex; flex-wrap: wrap; gap: 9px; }
+  .chip{
+    font-size: 13.5px;
+    font-weight: 500;
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    padding: 8px 14px;
+    border-radius: 8px;
+  }
+
+  /* EXPERIENCE LIST */
+  .exp-item{ padding: 16px 0; border-top: 1px solid var(--line); }
+  .exp-item:first-child{ border-top: none; }
+  .exp-item .row{ display:flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .exp-item h4{ font-size: 16.5px; font-weight: 600; margin:0; }
+  .exp-item .org{ color: var(--accent); font-size: 14.5px; font-weight: 500; }
+  .exp-item .when{ font-size: 13.5px; color: var(--ink-soft); white-space: nowrap; }
+
+  /* FOOTER */
+  footer{
+    padding: 48px 0 70px;
+  }
+  footer h2{
+    font-size: clamp(26px, 4vw, 34px);
+    font-weight: 700;
+    max-width: 20ch;
+  }
+  footer .contact-links{
+    margin-top: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    font-size: 15px;
+  }
+  footer .contact-links a{ text-decoration: underline; text-underline-offset: 3px; }
+  footer .bottom-note{
+    margin-top: 40px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 640px){
+    .stats{ grid-template-columns: repeat(2, 1fr); }
+    .stat:nth-child(2){ border-right: none; }
+    .stat{ border-bottom: 1px solid var(--line); }
+    .work-item{ grid-template-columns: 1fr; }
+    .section-head{ flex-direction: column; align-items: flex-start; }
+    .section-head .note{ text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap hero">
+  <div class="eyebrow">Portfolio</div>
+  <h1>Faith Archibong</h1>
+  <p class="role">Social media manager and content strategist. I take an account from unclear or underperforming to organized, on-schedule, and growing — across TikTok, Instagram, X, Facebook, and LinkedIn.</p>
+  <div class="hero-links">
+    <a class="primary" href="mailto:archibongfaith1@gmail.com">Email me</a>
+    <a href="https://linkedin.com/in/faitharchibong" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://www.tiktok.com/@thefaitharchibong1" target="_blank" rel="noopener">Personal TikTok</a>
+  </div>
+</div>
+
+<div class="wrap stats">
+  <div class="stat">
+    <div class="num">3+</div>
+    <div class="label">years managing social accounts</div>
+  </div>
+  <div class="stat">
+    <div class="num">300→1.7K</div>
+    <div class="label">likes growth, CarryGo TikTok</div>
+  </div>
+  <div class="stat">
+    <div class="num">5</div>
+    <div class="label">platforms worked across</div>
+  </div>
+  <div class="stat">
+    <div class="num">8+</div>
+    <div class="label">brand &amp; client accounts managed</div>
+  </div>
+</div>
+
+<div class="wrap">
+<section>
+  <div class="section-head">
+    <h2>Accounts I manage or have managed</h2>
+    <div class="note">Live links — click through to see current pages</div>
+  </div>
+
+  <div class="work-list">
+
+    <div class="work-item">
+      <div>
+        <h3>CarryGo Logistech — TikTok</h3>
+        <div class="meta">Customer Service Support &amp; Social Media Manager · Jul 2026 – Present</div>
+        <div class="meta">Took over a shadow-banned account. Ran page audits, rebuilt content, shot and edited original videos.</div>
+        <span class="result">Grew from under 300 likes to 1,700+ likes, 500+ views</span>
+      </div>
+      <a class="visit" href="https://www.tiktok.com/@carrygologistics_" target="_blank" rel="noopener">View page →</a>
+    </div>
+
+    <div class="work-item">
+      <div>
+        <h3>Roicomsat Travel — TikTok</h3>
+        <div class="meta">Business Development &amp; Social Media Manager · May – Jul 2026</div>
+        <div class="meta">Built and launched the account from scratch — branding, content plan, and video production on CapCut.</div>
+      </div>
+      <a class="visit" href="https://www.tiktok.com/@roicomsat.travel" target="_blank" rel="noopener">View page →</a>
+    </div>
+
+    <div class="work-item">
+      <div>
+        <h3>Roicomsat Print — TikTok</h3>
+        <div class="meta">Business Development &amp; Social Media Manager · May – Jul 2026</div>
+        <div class="meta">Second account built alongside Roicomsat Travel, managed simultaneously with a shared content strategy.</div>
+      </div>
+      <a class="visit" href="https://www.tiktok.com/@roicomsat_print" target="_blank" rel="noopener">View page →</a>
+    </div>
+
+    <div class="work-item">
+      <div>
+        <h3>@thefaitharchibong1 — Personal Brand</h3>
+        <div class="meta">Self-managed · 2023 – Present</div>
+        <div class="meta">Three years of consistent, self-directed content and SEO strategy — the same playbook I apply to every client account.</div>
+      </div>
+      <a class="visit" href="https://www.tiktok.com/@thefaitharchibong1" target="_blank" rel="noopener">View page →</a>
+    </div>
+
+  </div>
+
+  <p class="confidential-note">I also currently coordinate multiple client accounts for Klugekopf Global Concept across X, Instagram, Facebook, and LinkedIn — spanning Web3, AI healthcare, and industry management brands. Those pages aren't listed here out of respect for client confidentiality, but details and references are available on request.</p>
+</section>
+
+<section>
+  <div class="section-head">
+    <h2>Experience</h2>
+  </div>
+
+  <div class="exp-item">
+    <div class="row">
+      <h4>Social Media Manager — Client Accounts</h4>
+      <div class="when">Aug 2026 – Present</div>
+    </div>
+    <div class="org">Klugekopf Global Concept</div>
+  </div>
+
+  <div class="exp-item">
+    <div class="row">
+      <h4>Customer Service Support &amp; Social Media Manager</h4>
+      <div class="when">Jul 2026 – Present</div>
+    </div>
+    <div class="org">CarryGo Logistech</div>
+  </div>
+
+  <div class="exp-item">
+    <div class="row">
+      <h4>Business Development Manager &amp; Social Media Manager</h4>
+      <div class="when">May – Jul 2026</div>
+    </div>
+    <div class="org">Roicomsat Global Services</div>
+  </div>
+
+  <div class="exp-item">
+    <div class="row">
+      <h4>Social Media Assistant — Summer.fi Project</h4>
+      <div class="when">Feb – Apr 2026</div>
+    </div>
+    <div class="org">Klugekopf Global Concept</div>
+  </div>
+
+  <div class="exp-item">
+    <div class="row">
+      <h4>Community Manager &amp; X Manager</h4>
+      <div class="when"></div>
+    </div>
+    <div class="org">Sui on Campus Student Club, Calabar (SOCSC)</div>
+  </div>
+</section>
+
+<section>
+  <div class="section-head">
+    <h2>Tools &amp; skills</h2>
+  </div>
+  <div class="chip-group">
+    <span class="chip">Content strategy</span>
+    <span class="chip">Page audits</span>
+    <span class="chip">Community management</span>
+    <span class="chip">Multi-account coordination</span>
+    <span class="chip">Canva</span>
+    <span class="chip">CapCut</span>
+    <span class="chip">ChatGPT / AI workflows</span>
+    <span class="chip">PublishOx</span>
+    <span class="chip">Campaign &amp; growth strategy</span>
+    <span class="chip">Client communication</span>
+    <span class="chip">Reporting &amp; analytics</span>
+  </div>
+</section>
+</div>
+
+<footer class="wrap">
+  <h2>Let's talk about your accounts.</h2>
+  <div class="contact-links">
+    <a href="mailto:archibongfaith1@gmail.com">archibongfaith1@gmail.com</a>
+    <a href="https://linkedin.com/in/faitharchibong" target="_blank" rel="noopener">linkedin.com/in/faitharchibong</a>
+    <a href="https://github.com/faithArchibong555" target="_blank" rel="noopener">github.com/faithArchibong555</a>
+  </div>
+  <div class="bottom-note">Based in Nigeria · Open to remote, hybrid &amp; on-site roles</div>
+</footer>
+
+</body>
+</html>

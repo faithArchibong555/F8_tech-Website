@@ -72,7 +72,6 @@ body {
   opacity: 0;
   transition: opacity 0.5s;
 }
-
 .role-card:hover { background: #121212; border-color: #2a2a2a; }
 .role-card:hover::before { opacity: 1; }
 
