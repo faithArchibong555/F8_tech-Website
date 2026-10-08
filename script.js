@@ -2,9 +2,11 @@
 const menuBtn = document.querySelector('.menu-btn');
 const navLinks = document.querySelector('.nav-links');
 
-menuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-});
+if (menuBtn && navLinks) {
+    menuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+    });
+}
 
 // close menu when a nav link is clicked
 const navItems = document.querySelectorAll('.nav-links a');
@@ -18,10 +20,12 @@ navItems.forEach(item => {
 // Smooth Scrolling for Navigation Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (!href || href === '#') return; // placeholder links: do nothing
+        const target = document.querySelector(href);
+        if (!target) return;
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        target.scrollIntoView({ behavior: 'smooth' });
     });
 });
 
@@ -29,7 +33,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 
-themeToggle.addEventListener('click', () => {
+if (themeToggle) themeToggle.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
     const icon = themeToggle.querySelector('i');
     if (body.classList.contains('dark-mode')) {
@@ -58,34 +62,6 @@ window.addEventListener('scroll', animateOnScroll);
 window.addEventListener('load', animateOnScroll);
 
 
- const form = document.querySelector('.contact-form');
-  
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault(); // "Don't reload the page!"
-    
-    const submitBtn = form.querySelector('button[type="submit"]');
-    submitBtn.disabled = true; // "Freeze the button!"
-    submitBtn.textContent = 'Sending...'; // "Change button text"
-    
-    try {
-      // Send data to Formspree
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      });
-      
-      // Success!
-      if (response.ok) {
-        form.innerHTML = '<p class="success">✅ Message sent!</p>';
-      } else {
-        throw new Error('Failed');
-      }
-    } catch (error) {
-      // Error!
-      form.innerHTML = '<p class="error">❌ Failed. Email me directly!</p>';
-    }
-  });
 // ===== FORM VALIDATION CODE =====
 
 // Wait for DOM to load
